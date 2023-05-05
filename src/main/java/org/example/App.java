@@ -43,8 +43,8 @@ public class App {
         FestivalGate gate = new FestivalGate();
 
         Queue<String> ticketQueue = new LinkedList<>();
-
-        FestivalStatisticsThread statisticsThread = new FestivalStatisticsThread(ticketQueue);
+        FestivalStatistics festivalStatistics = new FestivalStatistics();
+        FestivalStatisticsThread statisticsThread = new FestivalStatisticsThread(ticketQueue, festivalStatistics );
         statisticsThread.start();
         statisticsThread.sleep(1000);
 
@@ -53,7 +53,6 @@ public class App {
 
             AttendeeThread attendeeThread = new AttendeeThread(ticketType, ticketQueue);
             attendeeThread.start();
-            attendeeThread.sleep(5000);
         }
     }
 }

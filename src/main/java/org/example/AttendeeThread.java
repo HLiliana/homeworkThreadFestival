@@ -20,7 +20,7 @@ public class AttendeeThread extends Thread {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
+        sleep(5000);
         enterGate();
     }
 
